@@ -1,0 +1,134 @@
+# Python Automation Kit — Skills Registry
+
+version: "1.0.0"
+
+skills:
+  # --- Tier 1: Orchestrators ---
+  orchestrator:
+    tier: 1
+    category: orchestrator
+    path: tier-1-orchestrators/orchestrator/SKILL.md
+    description: Routes requests to hubs. Scaffolds projects. Manages end-to-end pipeline.
+    triggers: ["build tool", "create script", "automate", "python tool", "tạo tool"]
+    auto_load: true
+
+  # --- Tier 2: Hubs ---
+  architect:
+    tier: 2
+    category: hub
+    path: tier-2-hubs/architect/SKILL.md
+    description: Designs project structure, modules, dependencies, and data flow.
+    triggers: ["design project", "architecture", "module plan", "project structure"]
+    requires: [orchestrator]
+    related: [builder]
+
+  builder:
+    tier: 2
+    category: hub
+    path: tier-2-hubs/builder/SKILL.md
+    description: Python code patterns, best practices, typing, async, error handling.
+    triggers: ["write code", "python code", "implement", "code pattern"]
+    requires: [architect]
+    related: [debugger]
+
+  deployer:
+    tier: 2
+    category: hub
+    path: tier-2-hubs/deployer/SKILL.md
+    description: Server deployment, Docker, systemd, CI/CD, production setup.
+    triggers: ["deploy", "server", "docker", "production", "CI/CD"]
+    requires: [debugger]
+
+  debugger:
+    tier: 2
+    category: hub
+    path: tier-2-hubs/debugger/SKILL.md
+    description: Testing, debugging, logging, profiling, error analysis.
+    triggers: ["test", "debug", "fix error", "pytest", "logging"]
+    requires: [builder]
+    related: [deployer]
+
+  # --- Tier 3: Utilities ---
+  google-workspace:
+    tier: 3
+    category: utility
+    path: tier-3-utilities/google-workspace/SKILL.md
+    description: Gmail, Sheets, Drive, Calendar, Docs API integration.
+    triggers: ["gmail", "google sheets", "google drive", "calendar", "google api"]
+
+  database:
+    tier: 3
+    category: utility
+    path: tier-3-utilities/database/SKILL.md
+    description: SQL/NoSQL, SQLAlchemy ORM, migrations, connection pooling.
+    triggers: ["database", "SQL", "MySQL", "PostgreSQL", "MongoDB", "SQLAlchemy"]
+
+  ai-models:
+    tier: 3
+    category: utility
+    path: tier-3-utilities/ai-models/SKILL.md
+    description: OpenAI, Gemini, LangChain, prompt engineering, RAG.
+    triggers: ["AI", "GPT", "OpenAI", "Gemini", "LangChain", "LLM", "prompt"]
+
+  scheduler:
+    tier: 3
+    category: utility
+    path: tier-3-utilities/scheduler/SKILL.md
+    description: Cron jobs, APScheduler, Celery, task queues, recurring tasks.
+    triggers: ["schedule", "cron", "recurring", "periodic", "celery", "task queue"]
+
+  api-framework:
+    tier: 3
+    category: utility
+    path: tier-3-utilities/api-framework/SKILL.md
+    description: FastAPI, Flask patterns, middleware, CORS, OpenAPI docs.
+    triggers: ["API", "FastAPI", "Flask", "REST", "webhook", "endpoint"]
+
+  # --- Tier 4: Domains ---
+  data-processing:
+    tier: 4
+    category: domain
+    path: tier-4-domains/data-processing/SKILL.md
+    description: Pandas, ETL pipelines, CSV/Excel, data validation, transformation.
+    triggers: ["data processing", "pandas", "CSV", "Excel", "ETL", "transform"]
+    requires: [builder]
+
+  web-scraping:
+    tier: 4
+    category: domain
+    path: tier-4-domains/web-scraping/SKILL.md
+    description: BeautifulSoup, Playwright, Selenium, anti-detection, proxy rotation.
+    triggers: ["scrape", "crawl", "web scraping", "BeautifulSoup", "Playwright", "Selenium"]
+    requires: [builder]
+
+  reporting:
+    tier: 4
+    category: domain
+    path: tier-4-domains/reporting/SKILL.md
+    description: Charts, PDF generation, email reports, dashboards.
+    triggers: ["report", "chart", "PDF", "dashboard", "matplotlib", "plotly"]
+    requires: [builder]
+
+  file-management:
+    tier: 4
+    category: domain
+    path: tier-4-domains/file-management/SKILL.md
+    description: S3, GCS, local file ops, zip/unzip, streaming uploads.
+    triggers: ["file", "upload", "download", "S3", "GCS", "storage"]
+    requires: [builder]
+
+  notification:
+    tier: 4
+    category: domain
+    path: tier-4-domains/notification/SKILL.md
+    description: Zalo, Telegram, Slack, Email, SMS notifications.
+    triggers: ["notify", "Zalo", "Telegram", "Slack", "email", "SMS", "alert"]
+    requires: [builder]
+
+  auth-security:
+    tier: 4
+    category: domain
+    path: tier-4-domains/auth-security/SKILL.md
+    description: OAuth2, JWT, .env management, secrets, API key rotation.
+    triggers: ["auth", "OAuth", "JWT", "security", "token", "credentials", ".env"]
+    requires: [builder]

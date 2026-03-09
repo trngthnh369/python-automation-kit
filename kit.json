@@ -1,0 +1,35 @@
+{
+  "name": "python-automation-kit",
+  "version": "1.0.0",
+  "description": "4-tier skill kit for AI agents to build Python automation tools — Google Workspace, AI models, data processing, server deployment.",
+  "author": "KhoaHRV",
+  "license": "MIT",
+  "repository": "https://github.com/trngthnh369/python-automation-kit",
+  "engines": {
+    "agents": ["antigravity", "claude-code", "gemini-cli", "cursor"]
+  },
+  "language": "python",
+  "entry_point": "_moc.md",
+  "tiers": {
+    "1-orchestrators": {
+      "description": "Task routing, project scaffolding, intent detection. Auto-loaded.",
+      "auto_load": true,
+      "skills": ["orchestrator"]
+    },
+    "2-hubs": {
+      "description": "Core development lifecycle. Loaded by orchestrator.",
+      "auto_load": false,
+      "skills": ["architect", "builder", "deployer", "debugger"]
+    },
+    "3-utilities": {
+      "description": "Technical integrations. Loaded by hubs as needed.",
+      "auto_load": false,
+      "skills": ["google-workspace", "database", "ai-models", "scheduler", "api-framework"]
+    },
+    "4-domains": {
+      "description": "Domain-specific patterns. Loaded by project type.",
+      "auto_load": false,
+      "skills": ["data-processing", "web-scraping", "reporting", "file-management", "notification", "auth-security"]
+    }
+  }
+}
